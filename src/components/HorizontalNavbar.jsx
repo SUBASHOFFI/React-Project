@@ -11,9 +11,11 @@ import './HorizontalNavbar.css'; // Add a CSS file for styling
 const navbarStyle = {
   backgroundColor: '#555',
   display: 'flex',
+  //backgroundSize:'cover',
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '15px',
+  width:'100%'
 };
 
 const linkStyle = {
@@ -99,8 +101,8 @@ const HorizontalNavbar = () => {
   return (
     <div>
       <nav style={navbarStyle}>
-        <NavLink to="/" style={linkStyle} activeStyle={activeLinkStyle} onMouseEnter={() => handleComponentHover('home')} onMouseLeave={handleComponentLeave}>
-          <FontAwesomeIcon icon={faHome} style={{ marginRight: '5px' }} /> Home
+        <NavLink to="/Login" style={linkStyle} activeStyle={activeLinkStyle} onMouseEnter={() => handleComponentHover('home')} onMouseLeave={handleComponentLeave}>
+          <FontAwesomeIcon icon={faHome} style={{ marginRight: '5px' }} /> Switch Account
           {showTooltip === 'home' && (
             <div style={tooltipStyle}>
               <p>{componentDetails.home}</p>
@@ -123,7 +125,7 @@ const HorizontalNavbar = () => {
             </div>
           )}
         </NavLink>
-        <NavLink to="/Go" style={linkStyle} activeStyle={activeLinkStyle} onClick={product} onMouseEnter={() => handleComponentHover('products')} onMouseLeave={handleComponentLeave}>
+        <NavLink to="/Add" style={linkStyle} activeStyle={activeLinkStyle} onClick={product} onMouseEnter={() => handleComponentHover('products')} onMouseLeave={handleComponentLeave}>
           <FontAwesomeIcon icon={faBars} style={{ marginRight: '5px' }} /> Products
           {showTooltip === 'products' && (
             <div style={tooltipStyle}>
@@ -147,8 +149,8 @@ const HorizontalNavbar = () => {
             </div>
           )}
         </NavLink>
-        <NavLink to="/Sign" style={linkStyle} activeStyle={activeLinkStyle} onClick={handleSignInClick}>
-          <FontAwesomeIcon icon={faSignInAlt} style={{ marginRight: '5px' }} /> Sign In
+        <NavLink to="/" style={linkStyle} activeStyle={activeLinkStyle} onClick={handleSignInClick}>
+          <FontAwesomeIcon icon={faSignInAlt} style={{ marginRight: '5px' }} /> Sign  Out
         </NavLink>
       </nav>
 
